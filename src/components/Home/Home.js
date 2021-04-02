@@ -45,37 +45,37 @@ import Products from '../Products/Products';
 const Home = () => {
     const [products, setProducts] = useState([]);
     // console.log(products);
-    useEffect(()=>{
+    useEffect(() => {
         fetch('https://stormy-escarpment-82288.herokuapp.com/products')
-        .then(res => res.json())
-        .then(data =>setProducts(data))
-    },[])
+            .then(res => res.json())
+            .then(data => setProducts(data))
+    }, [])
     return (
         <Container >
-           
-           
-               
-            
-        
-         
-           {
+
+
+
+
+
+
+            {
                 products.length === 0 && <div className="d-flex justify-content-center align-items-center">
                     <div className="spinner-border" role="status">
-                        {/* <span className="visually-hidden">Loading...</span> */}
+
                     </div>
                 </div>
             }
             <div className="row">
-            {
-                products.map(product => <Products key={product._id} product={product} ></Products> )
-            }
-       
+                {
+                    products.map(product => <Products key={product._id} product={product} ></Products>)
+                }
+
             </div>
-           
-        
-            
-               
-           
+
+
+
+
+
         </Container>
     );
 };

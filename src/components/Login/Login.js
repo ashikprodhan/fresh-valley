@@ -61,32 +61,16 @@ function Login() {
       })
     //  console.log(user);
   }
-  const handleSignOut = () => {
-    firebase.auth().signOut().then(res => {
-      const signedOutUser = {
-        isLoggedIn: false,
-        name: '',
-        email: '',
-        photo: ''
-      }
-      setUser(signedOutUser)
-      setLoggedInUser(signedOutUser)
-      console.log('response', res);
-      // Sign-out successful.
-    }).catch((error) => {
-      console.log(error);
-      // An error happened.
-    });
-  }
+  
 
 
 
   return (
     <div className="container"  >
       <div className="signinStyle">
-        {
-          user.isLoggedIn ? <button onClick={handleSignOut}>sign out</button> : <button type="button" className="btn btn-primary" onClick={handleSignIn} ><FontAwesomeIcon icon={faGoogle} />  Login with Google</button>
-        }
+        
+         <button type="button" className="btn btn-primary" onClick={handleSignIn} ><FontAwesomeIcon icon={faGoogle} />  Login with Google</button>
+        
       </div>
     </div>);
 }

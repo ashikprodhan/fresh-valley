@@ -21,9 +21,7 @@ const ManageProduct = () => {
                 alert('deleted successfully')
             }
         } )
-        // .then(result =>{
-        //     console.log('deleted successfully');
-        // })
+        
 
     }
 
